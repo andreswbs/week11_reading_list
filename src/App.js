@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState} from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import AddBook from './AddBook';
+import BookList from './BookList';
 
 function App() {
   const [newBook, setNewBook] = useState({author: '', title: ''})
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <Container>
             <AddBook newBook={newBook} setNewBook={setNewBook} addBookFunc={addNewBookBook} />
+            <BookList booklist={booklist} />
       </Container>
       
     </div>
