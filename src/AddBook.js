@@ -1,6 +1,7 @@
 import { Row, Col, Form, Button } from 'react-bootstrap';
 
-function AddBook({newBook, setNewBook}) {
+function AddBook({newBook, setNewBook, addBookFunc}) {
+    return (
     <Form>
         <Row>
             <Col>
@@ -21,17 +22,18 @@ function AddBook({newBook, setNewBook}) {
                     value={newBook.title} 
                     type="text" 
                     placeholder='Enter title' 
-                    onChange={({target})=>setNewBook(prev => ({author: prev.auhtor, title: target.value}))} 
+                    onChange={({target})=>setNewBook(prev => ({author: prev.author, title: target.value}))} 
                 />
                 </Form.Group>
             </Col>
             <Col>
-                <Button variant='primary'>
+                <Button onClick={addBookFunc} variant='primary'>
                 Add book
                 </Button>
             </Col>
         </Row>
     </Form>
+    )
 
 }
 
